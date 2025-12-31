@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <meta name="description" content="Explore premium projects by Salihu: luxury hotel booking systems, real-time dashboards, e-commerce platforms, and scalable SaaS apps built with React, Laravel, Tailwind & Paystack.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F172A',
+            accent: '#06B6D4',
+            'accent-dark': '#0891b2',
+            textLight: '#E5E7EB',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            glow: 'glow 3s ease-in-out infinite alternate',
+            fadeIn: 'fadeIn 1s ease-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(6,182,212,0.4)' },
+              '100%': { boxShadow: '0 0 40px rgba(6,182,212,0.7)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #0F172A, #0f172ae6, #1e293b);
+      color: #E5E7EB;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    body.light {
+      background: linear-gradient(to bottom right, #F8FAFC, #ffffffe6, #e5e7eb);
+      color: #0F172A;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.5s ease;
+    }
+    body.light .glass {
+      background: rgba(15, 23, 42, 0.05);
+      border: 1px solid rgba(15, 23, 42, 0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #06B6D4 0%, #0891b2 60%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .project-card {
+      transition: all 0.7s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-30px) scale(1.03);
+      box-shadow: 0 50px 100px rgba(6, 182, 212, 0.4);
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav class="glass fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-4xl z-50 px-8 py-5 rounded-2xl shadow-2xl">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black gradient-text">CodeWithSalihu</a>
+      <ul class="hidden md:flex items-center gap-10">
+        <li><a href="index.html" class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition duration-300 font-medium">Home</a></li>
+        <li><a href="about.html" class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition duration-300 font-medium">About</a></li>
+        <li><a href="projects.html" class="text-[#06B6D4] font-semibold">Projects</a></li>
+        <li><a href="contact.html" class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition duration-300 font-medium">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" class="p-2 glass rounded-xl">
+          <i class="fas fa-moon text-[#06B6D4] text-xl"></i>
+        </button>
+        <button id="mobile-menu-btn" class="md:hidden text-[#06B6D4] p-2">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-6 space-y-4 pb-4">
+      <a href="index.html" class="block text-[#E5E7EB]/80 hover:text-[#06B6D4] py-2">Home</a>
+      <a href="about.html" class="block text-[#E5E7EB]/80 hover:text-[#06B6D4] py-2">About</a>
+      <a href="projects.html" class="block text-[#06B6D4] font-semibold py-2">Projects</a>
+      <a href="contact.html" class="block text-[#E5E7EB]/80 hover:text-[#06B6D4] py-2">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 px-6 text-center relative overflow-hidden opacity-0 animate-fadeIn" style="animation-delay: 0.2s;">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-10 left-10 w-96 h-96 bg-[#06B6D4]/10 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-0 right-10 w-80 h-80 bg-[#0891b2]/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    </div>
+    <div class="max-w-5xl mx-auto relative z-10">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-black gradient-text mb-8">
+        My Projects
+      </h1>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-12">
+        Real-world applications I've built — premium UIs, scalable backends, payment integrations, and luxury digital experiences.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="px-6 pb-32 opacity-0 animate-fadeIn" style="animation-delay: 0.4s;">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <!-- Project 1: DeGrand Hotel -->
+      <div class="glass rounded-3xl overflow-hidden project-card shadow-2xl">
+        <div class="h-72 overflow-hidden">
+          <img src="https://cdn.dribbble.com/userupload/43319314/file/original-2110965c7a45c22f43c126824a1c6c91.jpg?resize=752x&vertical=center" alt="DeGrand Hotel Luxury Booking System" class="w-full h-full object-cover transition duration-1000 hover:scale-110">
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 gradient-text">DeGrand Hotel</h3>
+          <p class="text-[#E5E7EB]/80 mb-6">Full luxury hotel booking platform with real-time availability, Paystack payments, admin dashboard, and premium UI.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono text-[#06B6D4]">Laravel</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">Tailwind</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">Paystack</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">MySQL</span>
+          </div>
+          <div class="flex gap-6">
+            <a href="https://www.degrandhotel.com" target="_blank" class="text-[#06B6D4] hover:text-white transition flex items-center gap-2 font-medium">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/salihuhassan" target="_blank" class="text-[#E5E7EB]/70 hover:text-[#06B6D4] transition flex items-center gap-2 font-medium">
+              <i class="fab fa-github"></i> Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: SmartSummary -->
+      <div class="glass rounded-3xl overflow-hidden project-card shadow-2xl">
+        <div class="h-72 overflow-hidden">
+          <img src="https://cdn.prod.website-files.com/5e8e816d43060db856099187/647e52ec646a5af457790627_software-dashboard-webflow-template.png" alt="SmartSummary AI Platform Dashboard" class="w-full h-full object-cover transition duration-1000 hover:scale-110">
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 gradient-text">SmartSummary</h3>
+          <p class="text-[#E5E7EB]/80 mb-6">Intelligent content summarization platform with dark-mode dashboard, user auth, and real-time processing.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono text-[#06B6D4]">React</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">Next.js</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">Tailwind</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">API</span>
+          </div>
+          <div class="flex gap-6">
+            <a href="https://smartsummary.com.ng/" target="_blank" class="text-[#06B6D4] hover:text-white transition flex items-center gap-2 font-medium">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/salihuhassan" target="_blank" class="text-[#E5E7EB]/70 hover:text-[#06B6D4] transition flex items-center gap-2 font-medium">
+              <i class="fab fa-github"></i> Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Luxury E-Commerce Concept -->
+      <div class="glass rounded-3xl overflow-hidden project-card shadow-2xl">
+        <div class="h-72 overflow-hidden">
+          <img src="https://i.etsystatic.com/27757625/r/il/2de74b/5305004174/il_1080xN.5305004174_6rn0.jpg" alt="Luxury Fashion E-Commerce Store" class="w-full h-full object-cover transition duration-1000 hover:scale-110">
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 gradient-text">Luxe Fashion Store</h3>
+          <p class="text-[#E5E7EB]/80 mb-6">Minimal luxury e-commerce platform with cart, Paystack checkout, inventory, and mobile-first premium design.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono text-[#06B6D4]">Next.js</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">Tailwind</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">Paystack</span>
+            <span class="px-4 py-2 glass rounded-lg text-xs font-mono">Prisma</span>
+          </div>
+          <div class="flex gap-6">
+            <a href="#" class="text-[#06B6D4] hover:text-white transition flex items-center gap-2 font-medium">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/salihuhassan" target="_blank" class="text-[#E5E7EB]/70 hover:text-[#06B6D4] transition flex items-center gap-2 font-medium">
+              <i class="fab fa-github"></i> Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32 px-6 text-center opacity-0 animate-fadeIn" style="animation-delay: 0.6s;">
+    <div class="glass max-w-3xl mx-auto p-16 rounded-3xl shadow-2xl">
+      <h2 class="text-4xl md:text-5xl lg:text-4xl font-black gradient-text mb-8">
+        Got a Project in Mind?
+      </h2>
+      <p class="text-xl md:text-2xl mb-12">
+        Let's turn your idea into a premium, scalable reality.
+      </p>
+      <a href="contact.html" class="glass px-12 py-6 rounded-xl font-mono text-lg uppercase tracking-wider border-2 border-[#06B6D4]/50 hover:border-[#06B6D4] hover:bg-[#06B6D4]/10 transition-all duration-500 inline-flex items-center gap-4 shadow-xl">
+        <i class="fas fa-comment-dots"></i>
+        Let's Talk
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass py-12 px-8 border-t border-[#E5E7EB]/10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
+      <div>
+        <h3 class="text-2xl font-black gradient-text mb-4">CodeWithSalihu</h3>
+        <p class="text-[#E5E7EB]/70">Fullstack Dev crafting luxury digital experiences. Nigeria → World.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-[#06B6D4] mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="projects.html" class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition">Projects</a></li>
+          <li><a href="about.html" class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition">About</a></li>
+          <li><a href="contact.html" class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-[#06B6D4] mb-4">Connect</h4>
+        <div class="flex gap-4 justify-center md:justify-start">
+          <a href="https://github.com/salihuhassan" target="_blank" class="glass p-3 rounded-xl hover:bg-[#06B6D4]/20 transition-all">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.185 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/salihu-barup-25712632b" target="_blank" class="glass p-3 rounded-xl hover:bg-[#06B6D4]/20 transition">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:salihubarup@gmail.com" class="glass p-3 rounded-xl hover:bg-[#06B6D4]/20 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-[#E5E7EB]/20 mt-12 pt-8 text-center text-sm text-[#E5E7EB]/50">
+      <p>&copy; 2025 CodeWithSalihu. Built with ❤️ in Calabar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light');
+      if (body.classList.contains('light')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+      localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+  </script>
+</body>
+</html>
