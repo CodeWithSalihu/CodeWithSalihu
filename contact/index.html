@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <meta name="description" content="Get in touch with Salihu for web development projects, collaborations, or freelance work. Fullstack developer based in Nigeria.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F172A',
+            accent: '#06B6D4',
+            'accent-dark': '#0891b2',
+            textLight: '#E5E7EB',
+            bgLight: '#F8FAFC',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            glow: 'glow 3s ease-in-out infinite alternate',
+            fadeIn: 'fadeIn 1s ease-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(6,182,212,0.4)' },
+              '100%': { boxShadow: '0 0 40px rgba(6,182,212,0.7)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #0F172A, #0f172ae6, #1e293b);
+      color: #E5E7EB;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    body.light {
+      background: linear-gradient(to bottom right, #F8FAFC, #ffffffe6, #e5e7eb);
+      color: #0F172A;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: background 0.3s ease, border 0.3s ease;
+    }
+    body.light .glass {
+      background: rgba(15, 23, 42, 0.05);
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      backdrop-filter: blur(16px);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #06B6D4 0%, #0891b2 60%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    body.light .gradient-text {
+      background: linear-gradient(135deg, #06B6D4 0%, #0891b2 60%);
+      -webkit-text-fill-color: transparent;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #06B6D4; 
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3);
+      transition: all 0.3s ease;
+    }
+    .nav-link {
+      color: #E5E7EB;
+      transition: color 0.3s ease;
+    }
+    body.light .nav-link {
+      color: #0F172A;
+    }
+    .nav-link:hover {
+      color: #06B6D4;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav class="glass fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-4xl z-50 px-8 py-5 rounded-2xl shadow-2xl">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="text-1xl font-black gradient-text">CodeWithSalihu</a>
+      <ul class="hidden md:flex items-center gap-10">
+        <li><a href="index.html" class="nav-link hover:text-accent transition duration-300 font-medium">Home</a></li>
+        <li><a href="about.html" class="nav-link hover:text-accent transition duration-300 font-medium">About</a></li>
+        <li><a href="projects.html" class="nav-link hover:text-accent transition duration-300 font-medium">Projects</a></li>
+        <li><a href="contact.html" class="text-accent font-semibold">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-4">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 glass rounded-xl">
+          <i class="fas fa-moon text-accent text-xl"></i>
+        </button>
+        <button id="mobile-menu-btn" class="md:hidden text-accent p-2">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-6 space-y-4 pb-4">
+      <a href="index.html" class="block nav-link py-2">Home</a>
+      <a href="about.html" class="block nav-link py-2">About</a>
+      <a href="projects.html" class="block nav-link py-2">Projects</a>
+      <a href="contact.html" class="block text-accent font-semibold py-2">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero / Header -->
+  <section class="pt-32 pb-20 px-6 text-center relative overflow-hidden opacity-0 animate-fadeIn" style="animation-delay: 0.2s;">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 -left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-0 -right-20 w-80 h-80 bg-accent-dark/10 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
+    </div>
+    <div class="max-w-5xl mx-auto relative z-10">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-black gradient-text mb-8">
+        Let's Connect
+      </h1>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+        Have a project in mind? Need a premium website, booking system, or scalable app?<br>
+        Drop me a message, I respond within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="px-3 pb-20 opacity-0 animate-fadeIn" style="animation-delay: 0.4s;">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+      <!-- Contact Info -->
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-3xl font-bold gradient-text mb-6">Get in Touch</h2>
+          <p class="text-lg text-textLight/80 leading-relaxed">
+            I'm currently open for freelance work, collaborations, and full-time opportunities.<br><br>
+            Based in Calabar, Nigeria 🇳🇬, working with clients worldwide.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 glass rounded-xl flex items-center justify-center">
+              <i class="fas fa-envelope text-2xl text-accent"></i>
+            </div>
+            <div>
+              <p class="text-sm text-textLight/60">Email</p>
+              <a href="mailto:salihubarup@gmail.com" class="text-lg hover:text-accent transition">salihubarup@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 glass rounded-xl flex items-center justify-center">
+              <i class="fab fa-whatsapp text-2xl text-accent"></i>
+            </div>
+            <div>
+              <p class="text-sm text-textLight/60">WhatsApp</p>
+              <a href="https://wa.me/2348066610571" target="_blank" class="text-lg hover:text-accent transition">Chat on WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 glass rounded-xl flex items-center justify-center">
+              <i class="fab fa-linkedin text-2xl text-accent"></i>
+            </div>
+            <div>
+              <p class="text-sm text-textLight/60">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/salihu-barup-25712632b" target="_blank" class="text-lg hover:text-accent transition">Connect on LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8">
+          <p class="text-sm uppercase tracking-wider text-textLight/60 mb-4">Follow Me</p>
+          <div class="flex gap-6">
+            <a href="https://github.com/salihuhassan" class="text-3xl hover:text-accent transition"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/verydarkblackm" class="text-3xl hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/beyond_the_buzz1" class="text-3xl hover:text-accent transition"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Location Map -->
+        <div class="mt-10">
+          <h3 class="text-xl font-bold mb-4 gradient-text">My Location</h3>
+          <div class="glass rounded-2xl overflow-hidden shadow-xl">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126284.072256798!2d8.281759!3d4.970483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106786dac0285f37%3A0x9471b3f6b922f1a!2sCalabar%2C%20Cross%20River!5e0!3m2!1sen!2sng!4v1730350000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="glass p-10 rounded-3xl shadow-2xl">
+        <form id="contact-form" action="https://formspree.io/f/xkonddrz" method="POST" class="space-y-6"> <!-- Update with your Formspree ID -->
+          <div>
+            <label class="block text-sm font-medium mb-2">Your Name</label>
+            <input type="text" name="name" required class="w-full px-6 py-4 glass rounded-xl border border-textLight/20 focus:border-accent transition" placeholder="Salihu Barup">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Email Address</label>
+            <input type="email" name="email" required class="w-full px-6 py-4 glass rounded-xl border border-textLight/20 focus:border-accent transition" placeholder="salihubarup@gmail.com">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Project Type</label>
+            <select name="project_type" class="w-full px-6 py-4 glass rounded-xl border border-textLight/20 focus:border-accent transition">
+              <option>Website Development</option>
+              <option>Booking System</option>
+              <option>SaaS / Dashboard</option>
+              <option>E-commerce</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="relative">
+            <label class="block text-sm font-medium mb-2">Message</label>
+            <textarea name="message" rows="6" required maxlength="500" class="w-full px-6 py-4 glass rounded-xl border border-textLight/20 focus:border-accent transition resize-none" placeholder="Tell me about your project..."></textarea>
+            <p class="absolute bottom-2 right-4 text-xs text-textLight/60" id="char-count">0/500</p>
+          </div>
+          <!-- Honeypot for spam -->
+          <input type="text" name="_gotcha" style="display:none !important;">
+          <button type="submit" class="w-full py-5 rounded-xl font-mono uppercase tracking-wider glass border-2 border-accent/50 hover:border-accent hover:bg-accent/10 transition-all duration-500 shadow-xl flex items-center justify-center gap-3">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+            <span id="form-loader" class="hidden ml-2 fa-spin"><i class="fas fa-spinner"></i></span>
+          </button>
+        </form>
+        <p id="form-message" class="text-center mt-6 text-sm font-medium hidden"></p>
+        <p class="text-xs text-textLight/50 text-center mt-4">
+          Secured by Formspree, no backend needed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass py-12 px-8 border-t border-textLight/10 opacity-0 animate-fadeIn" style="animation-delay: 0.6s;">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
+      <div>
+        <h3 class="text-2xl font-black gradient-text mb-4">CodeWithSalihu</h3>
+        <p class="text-textLight/70">Fullstack Dev crafting luxury digital experiences. Nigeria → World.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-accent mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-accent mb-4">Connect</h4>
+        <div class="flex gap-4 justify-center md:justify-start">
+          <a href="https://github.com/salihuhassan" target="_blank" class="glass p-3 rounded-xl hover:bg-accent/20 transition-all">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.185 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/salihu-barup-25712632b" target="_blank" class="glass p-3 rounded-xl hover:bg-accent/20 transition">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="mailto:salihubarup@gmail.com" class="glass p-3 rounded-xl hover:bg-accent/20 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-textLight/20 mt-12 pt-8 text-center text-sm text-textLight/50">
+      <p>&copy; 2025 CodeWithSalihu. Built with ❤️ in Calabar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+      localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+
+    // Form Handling
+    const form = document.getElementById('contact-form');
+    const messageEl = document.getElementById('form-message');
+    const loader = document.getElementById('form-loader');
+    const textarea = form.querySelector('textarea');
+    const charCount = document.getElementById('char-count');
+
+    textarea.addEventListener('input', () => {
+      charCount.textContent = `${textarea.value.length}/500`;
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      loader.classList.remove('hidden');
+      messageEl.classList.add('hidden');
+
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        });
+        if (response.ok) {
+          messageEl.textContent = 'Message sent successfully!';
+          messageEl.classList.remove('hidden', 'text-red-500');
+          messageEl.classList.add('text-green-400');
+          form.reset();
+          charCount.textContent = '0/500';
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (error) {
+        messageEl.textContent = 'Error sending message. Please try again.';
+        messageEl.classList.remove('hidden', 'text-green-400');
+        messageEl.classList.add('text-red-500');
+      } finally {
+        loader.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>
