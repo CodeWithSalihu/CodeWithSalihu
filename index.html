@@ -374,6 +374,149 @@
 </footer>
 
 
+
+
+
+
+
+
+  <!-- Floating Contact Button -->
+<div x-data="{ open: false }" class="fixed bottom-6 right-6 z-50">
+
+
+  <!-- Floating Label -->
+<div
+  class="mb-1 text-right pointer-events-none"
+>
+  <span
+    class="inline-block text-sm font-semibold
+           text-cyan-400 tracking-wide
+           animate-attention
+           relative"
+  >
+    Get in Touch
+
+    <!-- Glow underline -->
+    <span
+      class="absolute -bottom-1 left-0 w-full h-[1px]
+             bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400
+             blur-sm opacity-70 animate-underline"
+    ></span>
+  </span>
+</div>
+
+  <!-- Action Buttons -->
+  <div
+    x-show="open"
+    x-transition:enter="transition ease-out duration-400"
+    x-transition:enter-start="opacity-0 translate-y-6 scale-90"
+    x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+    x-transition:leave-end="opacity-0 translate-y-6 scale-90"
+    @click.outside="open = false"
+    class="flex flex-col gap-4 mb-5 items-end"
+  >
+    <!-- WhatsApp -->
+    <a
+      href="https://wa.me/2348066610571"
+      
+      target="_blank"
+      class="group flex items-center gap-3 bg-green-500 text-white px-5 py-3 rounded-full shadow-xl
+             transform transition-all duration-300 hover:-translate-x-2 hover:scale-105"
+    > 
+      <i class="fab fa-whatsapp text-xl group-hover:rotate-12 transition"></i>
+      WhatsApp
+    </a>
+
+    <!-- Phone Call -->
+    <a
+      href="tel:+2348066610571"
+      class="group flex items-center gap-3 bg-blue-500 text-white px-5 py-3 rounded-full shadow-xl
+             transform transition-all duration-300 hover:-translate-x-2 hover:scale-105"
+    >
+      <i class="fas fa-phone group-hover:-rotate-12 transition"></i>
+      Call Me
+    </a>
+  </div>
+
+  <!-- Main Floating Button -->
+  <button
+    @click="open = !open"
+    class="relative w-16 h-16 rounded-full bg-[#06B6D4] text-white shadow-2xl
+           flex items-center justify-center text-2xl
+           transition-all duration-300
+           hover:scale-110
+           animate-float"
+    aria-label="Get in touch"
+  >
+    <!-- Glow Ring -->
+    <span
+      class="absolute inset-0 rounded-full bg-cyan-400 opacity-30 blur-xl animate-ping"
+      x-show="!open"
+    ></span>
+
+    <!-- Icon -->
+    <i
+      :class="open ? 'fas fa-times rotate-180' : 'fas fa-comment-dots'"
+      class="relative z-10 transition-transform duration-300"
+    ></i>
+  </button>
+
+</div>
+
+<style>
+  @keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Floating label pulse */
+@keyframes attention {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+.animate-attention {
+  animation: attention 2.8s ease-in-out infinite;
+}
+
+/* Shimmer underline */
+@keyframes underline {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-underline {
+  background-size: 200% 200%;
+  animation: underline 3s linear infinite;
+}
+
+</style>
+
+
+
+
+
+  
   <!-- Scripts -->
   <script>
     // Mobile menu toggle
@@ -444,6 +587,7 @@
   </script>
 </body>
 </html>
+
 
 
 
