@@ -384,7 +384,7 @@
       <template x-for="t in testimonialsList" :key="t.name">
         <div class="glass p-8 rounded-3xl shadow-2xl flex flex-col items-center hover:scale-105 transition duration-500">
           <img :src="t.image" :alt="t.name" class="w-20 h-20 rounded-full mb-4 object-cover border-2 border-[#06B6D4]">
-          <p class="text-[#E5E7EB]/80 italic mb-4" x-text="t.feedback text-[color:var(--text-muted)]"></p>
+          <p class="text-[#E5E7EB]/80 italic mb-4" x-text="t.feedback"></p>
           <h4 class="text-lg font-bold text-[#06B6D4]" x-text="t.name"></h4>
           <span class="text-sm text-[#E5E7EB]/50" x-text="t.company"></span>
         </div>
@@ -399,7 +399,7 @@
           <div class="flex-shrink-0 w-full px-4">
             <div class="glass p-8 rounded-3xl shadow-2xl flex flex-col items-center">
               <img :src="t.image" :alt="t.name" class="w-20 h-20 rounded-full mb-4 object-cover border-2 border-[#06B6D4]">
-              <p class="text-[#E5E7EB]/80 italic mb-4" x-text="t.feedback text-[color:var(--text-muted)]"></p>
+              <p class="text-[#E5E7EB]/80 italic mb-4" x-text="t.feedback"></p>
               <h4 class="text-lg font-bold text-[#06B6D4]" x-text="t.name"></h4>
               <span class="text-sm text-[#E5E7EB]/50" x-text="t.company"></span>
             </div>
@@ -498,20 +498,20 @@ function testimonials() {
       <ul class="space-y-2">
         <li>
            <a href="/CodeWithSalihu/about/"
-             class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition">
+             class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition text-[color:var(--text-muted)]">
             About
           </a>
         </li>
         <li>
           <a href="/CodeWithSalihu/projects/"
-             class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition">
+             class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition text-[color:var(--text-muted)]">
             Projects
           </a>
         </li>
         <li>
          
           <a href="/CodeWithSalihu/contact/"
-             class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition">
+             class="text-[#E5E7EB]/80 hover:text-[#06B6D4] transition text-[color:var(--text-muted)]">
             Contact
           </a>
         </li>
@@ -773,6 +773,7 @@ function testimonials() {
   </script>
 </body>
 </html>
+
 
 
 
