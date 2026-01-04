@@ -14,12 +14,16 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   
+
+  
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
+  <!-- Alpine.js for interactivity -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -27,7 +31,6 @@
             accent: '#06B6D4',
             'accent-dark': '#0891b2',
             textLight: '#E5E7EB',
-            bgLight: '#F8FAFC',
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -48,7 +51,7 @@
               '100%': { boxShadow: '0 0 40px rgba(6,182,212,0.7)' },
             },
             fadeIn: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
               '100%': { opacity: '1', transform: 'translateY(0)' },
             },
           },
@@ -58,51 +61,58 @@
   </script>
 
   <style>
-    body {
-      background: linear-gradient(to bottom right, #0F172A, #0f172ae6, #1e293b);
-      color: #E5E7EB;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    body.light {
-      background: linear-gradient(to bottom right, #F8FAFC, #ffffffe6, #e5e7eb);
-      color: #0F172A;
-    }
+   body {
+  --text-main: #E5E7EB;
+  --text-muted: rgba(229, 231, 235, 0.7);
+  --card-bg: rgba(255, 255, 255, 0.08);
+
+  background: linear-gradient(to bottom right, #0F172A, #0f172ae6, #1e293b);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.light {
+  --text-main: #0F172A;
+  --text-muted: rgba(15, 23, 42, 0.7);
+  --card-bg: rgba(15, 23, 42, 0.05);
+
+  background: linear-gradient(to bottom right, #F8FAFC, #ffffffe6, #e5e7eb);
+  color: var(--text-main);
+}
+
     .glass {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: background 0.3s ease, border 0.3s ease;
-    }
-    body.light .glass {
-      background: rgba(15, 23, 42, 0.05);
-      border: 1px solid rgba(15, 23, 42, 0.1);
-      backdrop-filter: blur(16px);
-    }
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.5s ease;
+}
+
+body.light .glass {
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
     .gradient-text {
       background: linear-gradient(135deg, #06B6D4 0%, #0891b2 60%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    body.light .gradient-text {
-      -webkit-text-fill-color: transparent;
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -2px;
     }
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: #06B6D4; 
-      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3);
-      transition: all 0.3s ease;
+    @media (min-width: 768px) { .hero-title { font-size: 5rem; } }
+    @media (min-width: 1024px) { .hero-title { font-size: 6rem; } }
+
+    .typing-cursor {
+      animation: blink 1s infinite;
     }
-    .nav-link {
-      color: #E5E7EB;
-      transition: color 0.3s ease;
-    }
-    body.light .nav-link {
-      color: #0F172A;
-    }
-    .nav-link:hover {
-      color: #06B6D4;
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
   </style>
 </head>
@@ -430,6 +440,7 @@
 
 
 </html>
+
 
 
 
